@@ -1,8 +1,20 @@
 package com.ocrown.view.model.converse;
 
-public abstract class WeworkConverse {
+import lombok.Data;
+
+@Data
+public class WeworkConverse {
     String msgid;
     String action;
+
+    String from;
+    String tolist;
+    String roomid;
+    String msgtime;
+    String msgtype;
+
+    String time;
+    String user;
 
     public WeworkConverse() {
 
@@ -13,16 +25,4 @@ public abstract class WeworkConverse {
         this.action = action;
     }
 
-    public String getAction() {
-        return action;
-    }
-    public String getMsgid() {
-        return msgid;
-    }
-    public void setAction(String action) {
-        this.action = action;
-    }
-    public void setMsgid(String msgid) {
-        this.msgid = msgid;
-    }
 }

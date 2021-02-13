@@ -7,6 +7,7 @@ import com.ocrown.view.jdbc.converse.WeworkJdbcTemplate;
 
 import com.ocrown.view.model.converse.WeworkConverse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -16,6 +17,7 @@ class ConverseController{
 
     WeworkJdbcTemplate wjt;
 
+    @Autowired
     public ConverseController(WeworkJdbcTemplate wjt){
         this.wjt=wjt;
     }

@@ -6,28 +6,29 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.ocrown.view.model.converse.WeworkConverse;
-import com.ocrown.view.model.converse.SendConverse;
-import com.ocrown.view.model.converse.SwitchConverse;
 
 public class WeworkConverseMapper implements RowMapper<WeworkConverse> {
 
     @Override
     public WeworkConverse mapRow(ResultSet rs, int rowNum) throws SQLException {
         String action=rs.getString("action");
-        WeworkConverse wc;
+        WeworkConverse wc=new WeworkConverse(rs.getString("msgid"),action);
         if(action.equals("send")||action.equals("recall")){
-            SendConverse sc=new SendConverse(rs.getString("msgid"),action);
-            sc.setFrom(rs.getString("from"));
-            sc.setTolist(rs.getString("tolist"));
-            sc.setRoomid(rs.getString("roomid"));
-            sc.setMsgtime(rs.getString("msgtime"));
-            sc.setMsgtype(rs.getString("msgtype"));
-            wc=sc;
+            wc.setFrom(rs.getString("from"));
+            wc.setTolist(rs.getString("tolist"));
+            wc.setRoomid(rs.getString("roomid"));
+            wc.setMsgtime(rs.getString("msgtime"));
+            wc.setMsgtype(rs.getString("msgtype"));
+            wc.setTime("");
+            wc.setUser("");
         }else{
-            SwitchConverse swc=new SwitchConverse(rs.getString("msgid"), action);
-            swc.setTime(rs.getString("time"));
-            swc.setUser(rs.getString("user"));
-            wc=swc;
+            wc.setFrom("");
+            wc.setTolist("");
+            wc.setRoomid("");
+            wc.setMsgtime("");
+            wc.setMsgtype("");
+            wc.setTime(rs.getString("time"));
+            wc.setUser(rs.getString("user"));
         }
         return wc;
     }

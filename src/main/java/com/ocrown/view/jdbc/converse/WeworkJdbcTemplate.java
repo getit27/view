@@ -8,6 +8,7 @@ import com.ocrown.view.jdbc.Dao;
 import com.ocrown.view.mapper.converse.WeworkConverseMapper;
 import com.ocrown.view.model.converse.WeworkConverse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,7 @@ public class WeworkJdbcTemplate implements Dao<WeworkConverse> {
 
     private DataSource datasource;
     private JdbcTemplate jdbctemplate;
+    @Autowired
     public void setDatasource(DataSource datasource) {
         this.datasource = datasource;
         jdbctemplate=new JdbcTemplate(this.datasource);
