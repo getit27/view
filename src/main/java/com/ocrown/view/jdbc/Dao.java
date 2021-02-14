@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface Dao<T> {
     public List<T> listT();
-    public T getT(String id);
+    public List<T> getT(String id);
 }

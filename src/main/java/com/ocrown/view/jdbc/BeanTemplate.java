@@ -1,7 +1,5 @@
 package com.ocrown.view.jdbc;
 
-import java.util.List;
-
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;

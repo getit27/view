@@ -33,7 +33,9 @@
         <td th:text="${converse.tolist}"/>
         <td th:text="${converse.roomid}"/>
         <td th:text="${converse.msgtime}"/>
-        <td th:text="${converse.msgtype}"/>
+        <td>
+          <a th:href="@{/__${converse.msgtype}__msg/__${converse.msgid}__}" th:text="${converse.msgtype}"  target="view_window"/></a>
+        </td>
         <td th:text="${converse.time}"/>
         <td th:text="${converse.user}"/>
       </tr>

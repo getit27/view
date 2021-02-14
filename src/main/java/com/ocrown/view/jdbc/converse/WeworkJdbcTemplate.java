@@ -18,9 +18,9 @@ public class WeworkJdbcTemplate extends BeanTemplate<WeworkConverse> {
     }
 
     @Override
-    public WeworkConverse getT(String id) {
+    public List<WeworkConverse> getT(String id) {
         String sql="select * from weworkconversetable where msgid = ?";
-        return jdbctemp.queryForObject(sql,new Object[]{id},new WeworkConverseMapper());
+        return jdbctemp.query(sql,new WeworkConverseMapper(),id);
     }
     
 }
