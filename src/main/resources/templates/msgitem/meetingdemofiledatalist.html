@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+<body>
+
+  <h2>会议共享文件</h2>
+
+  <table id="items" class="table table-striped">
+    <thead>
+      <tr>
+        <!--<th style="width: 150px;">Name</th>
+        <th style="width: 200px;">Address</th>
+        <th>City</th>
+        <th style="width: 120px">Telephone</th>
+        <th>Pets</th>-->
+        <th>序号</th>
+        <th>共享文件</th>
+        <th>共享人</th>
+        <th>开始时间</th>
+        <th>结束时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="item: ${selections}">
+        <td th:text="${item.index}"/>
+        <td>
+          <a th:href="${item.filename}" th:text="${item.filename}">
+          </a>
+        </td>
+        <td th:text="${item.demooperator}"/>
+        <td th:text="${item.starttime}"/>
+        <td th:text="${item.endtime}"/>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+</html>

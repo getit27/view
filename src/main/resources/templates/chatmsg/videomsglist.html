@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+<body>
+
+  <h2>视频信息</h2>
+
+  <table id="msgs" class="table table-striped">
+    <thead>
+      <tr>
+        <!--<th style="width: 150px;">Name</th>
+        <th style="width: 200px;">Address</th>
+        <th>City</th>
+        <th style="width: 120px">Telephone</th>
+        <th>Pets</th>-->
+        <th>序号</th>
+        <th>视频</th>
+        <th>播放时长</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="msg: ${selections}">
+        <td th:text="${msg.index}"/>
+        <td>
+          <a th:href="${msg.filepath}">
+            <img th:src="${msg.filepath}"/>
+          </a>
+        </td>
+        <td th:text="${msg.playlenth}"/>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+</html>

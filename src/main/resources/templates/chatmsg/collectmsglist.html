@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+<body>
+
+  <h2>填表信息</h2>
+
+  <table id="msgs" class="table table-striped">
+    <thead>
+      <tr>
+        <!--<th style="width: 150px;">Name</th>
+        <th style="width: 200px;">Address</th>
+        <th>City</th>
+        <th style="width: 120px">Telephone</th>
+        <th>Pets</th>-->
+        <th>序号</th>
+        <th>标题</th>
+        <th>群名</th>
+        <th>创建者</th>
+        <th>创建时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="msg: ${selections}">
+        <td th:text="${msg.index}"/>
+        <td>
+          <a th:href="@{/collectitem/__${msg.msgid}__}" th:text="${msg.title}" target="view_window"/></a>
+        </td>
+        <td th:text="${msg.roomname}"/>
+        <td th:text="${msg.creator}"/>
+        <td th:text="${msg.createtime}"/>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+</html>
