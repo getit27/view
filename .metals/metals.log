@@ -26,3 +26,4 @@ java.lang.RuntimeException: CreateProcessW() failed, error: 5
 [0m2021.02.14 15:21:07 INFO  mvn bloopInstall exit: -2147483648[0m
 [0m2021.02.14 15:21:07 INFO  time: ran 'mvn bloopInstall' in 3.14s[0m
 [0m2021.02.14 15:21:07 ERROR Maven command failed: D:\Program Files (x86)\apache-maven-3.6.3\bin ch.epfl.scala:maven-bloop_2.12:1.4.6-21-464e4ec4:bloopInstall -DdownloadSources=true[0m
+[0m2021.02.14 17:24:26 INFO  shutting down Metals[0m
